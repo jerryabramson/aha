@@ -659,8 +659,7 @@ void printHeader(const struct Options *opts)
 		}
 		printf(">\n");
 	}
-
-	printf("<pre>\n");
+    if (!opts->bodystyle) printf("<pre>\n");
 }
 
 int main(int argc,char* args[])
@@ -1198,7 +1197,7 @@ int main(int argc,char* args[])
 	//Footer
 	if (opts.no_header == 0)
 	{
-		printf("</pre>\n");
+        if (!opts.bodystyle) printf("</pre>\n");
 		printf("</body>\n");
 		printf("</html>\n");
 	}
